@@ -212,7 +212,7 @@ rule
     { call(:r_shared_create_alter, :FULLTEXT, val) }
   | SPATIAL S r_opt_INDEX_or_KEY r_opt_index_name r_alter_index_opt
     { call(:r_shared_create_alter, :SPATIAL, val) }
-  | r_opt_CONSTRAINT_with_val FOREIGN S KEY S r_opt_index_name r_alter_index_opt
+  | r_opt_CONSTRAINT_with_val FOREIGN S KEY S r_opt_index_name r_alter_index_opt r_opt_REFERENCES_definition
     { call(:r_shared_create_alter, :FOREIGN_KEY, val) }
 
   r_alter_specification :
